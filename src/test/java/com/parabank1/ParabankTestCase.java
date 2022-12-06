@@ -56,9 +56,9 @@ public class ParabankTestCase {
 	}
 	@Test
 	public void LogIn() throws InterruptedException {
-		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("SOBUR345");
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("SOBUR456");
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("SOBUR345");
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("SOBUR456");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@value='Log In']")).click();
 		Thread.sleep(2000);
@@ -66,16 +66,18 @@ public class ParabankTestCase {
 	}
 	@Test
 	public void GetBalance() throws InterruptedException {
-		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("SOBUR345");
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("SOBUR456");
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("SOBUR345");
+		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("SOBUR456");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@value='Log In']")).click();
 		Thread.sleep(2000);
-		System.out.println(driver.findElement(By.className("ng-binding")).getText());
+		System.out.println(driver.findElement(By.xpath("//p[@class='error']")).getText());
 		Thread.sleep(2000);
 		
 	}
+	@Test
+	
 	@AfterTest
 	public void QuitFromWeb() {
 		driver.quit();
